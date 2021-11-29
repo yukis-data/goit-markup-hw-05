@@ -52,8 +52,20 @@
     <section class="section-button">
       <div class="button">
         <h1 class="section-button-title">Эффективные решения для вашего бизнеса</h1>
-        <button type="button" class="page-button">Заказать услугу</button>
+        <button type="button" class="page-button" data-modal-open>Заказать услугу</button>
       </div>
+
+      <!--backdrop and modal window-->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="modal-close" data-modal-close>
+            <svg class="close-svg">
+              <use href="./img/icons/sprite.svg#icon-modal-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+
     </section>
     <!--main content-->
     <main>
@@ -377,5 +389,8 @@
       </div>
       </div>
     </footer>
+
+    <script src="./js/modal.js"></script>
+
   </body>
 </html>
