@@ -101,7 +101,11 @@ nav {
   margin-right: 50px;
 }
 
-li > .nav-item {
+.site-nav > li {
+  position: relative;
+}
+
+.nav-item {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -110,9 +114,31 @@ li > .nav-item {
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.02em;
+
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-item:hover,
 .nav-item:focus {
+  color: var(--accent-color);
+}
+
+li > .active::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active-title {
   color: var(--accent-color);
 }
 
@@ -136,6 +162,8 @@ li > .nav-item {
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.02em;
+
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-contacts:hover,
 .nav-contacts:focus {
@@ -211,6 +239,8 @@ li > .nav-item {
 .page-button:focus,
 .page-button:hover {
   background-color: var(--accent-button-color);
+
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-button:active {
@@ -334,6 +364,32 @@ li > .nav-item {
   text-align: center;
 }
 
+.work-list {
+  position: relative;
+  width: 370px;
+  height: 294px;
+}
+
+.work-text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  text-align: center;
+  padding-top: 27px;
+
+  width: 100%;
+  height: 70px;
+
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--accent-text-color);
+  background: rgba(47, 48, 58, 0.8);
+}
+
 /*our team*/
 .team {
   background-color: var(--second-background-color);
@@ -402,18 +458,19 @@ li > .nav-item {
   display: inline-flex;
   border-radius: 50%;
   fill: var(--color-icons);
+
+  transition: 250ms border-color cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-icons:hover,
+.team-icons:focus {
+  background-color: var(--accent-color);
+  fill: var(--accent-text-color);
 }
 
 .icons-logo {
   width: 44px;
   height: 44px;
   padding: 12px 12px;
-}
-
-.team-icons:hover,
-.team-icons:focus {
-  background-color: var(--accent-color);
-  fill: var(--accent-text-color);
 }
 
 /*section our clients*/
@@ -447,6 +504,8 @@ li > .nav-item {
   border: 1px solid var(--color-icons);
   color: var(--color-icons);
   border-radius: 4px;
+
+  transition: 250ms border-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-link:hover,
@@ -523,6 +582,8 @@ li > .footer-contacts {
   border-radius: 50%;
   fill: var(--accent-text-color);
   background: rgba(255, 255, 255, 0.1);
+
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link:hover,
@@ -573,6 +634,9 @@ li > .footer-contacts {
 
   background-color: var(--second-background-color);
   cursor: pointer;
+
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms box-shadow cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filtres-button:focus,
@@ -600,6 +664,8 @@ div > .project-list {
 .project-item {
   width: 370px;
   border: 1px solid #eeeeee;
+
+  transition: 250ms box-shadow cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item:hover {
@@ -645,6 +711,7 @@ div > .project-list {
   border: 1px solid #eeeeee;
 
   opacity: 0;
+  transition: 250ms opacity cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item:hover .project-description {
