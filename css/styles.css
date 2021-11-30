@@ -254,6 +254,8 @@ nav {
   width: 100%;
   height: 100%;
 
+  z-index: 2;
+
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgba(0, 0, 0, 0.25);
@@ -665,20 +667,21 @@ div > .project-list {
 
 .project-item {
   width: 370px;
-  border: 1px solid #eeeeee;
+  /* border: 1px solid #eeeeee; */
 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item:hover {
-  border: 1px solid #eeeeee;
+  /* border: 1px solid #eeeeee; */
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .padding-text {
   padding: 20px 24px;
+  border: 1px solid #eeeeee;
 }
 
 .projects-title {
@@ -689,7 +692,13 @@ div > .project-list {
   line-height: 2;
 }
 
+.project-img {
+  overflow: hidden;
+}
+
 .projects-text {
+  width: 370px;
+
   color: var(--second-text-color);
   font-weight: 400;
   font-size: 16px;
@@ -697,6 +706,8 @@ div > .project-list {
 }
 
 .position {
+  width: 370px;
+  height: 294px;
   position: relative;
   overflow: hidden;
 }
@@ -708,7 +719,7 @@ div > .project-list {
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
-  border: 1px solid #eeeeee;
+  border: 1px solid rgba(33, 150, 243, 0.9);
 
   opacity: 0;
   transform: translateY(100%);
